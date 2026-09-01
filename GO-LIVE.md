@@ -1,16 +1,17 @@
 # UpLife Painting — go-live runbook
 
-The site is **built, deployed and preview-locked**. Three things stand between it and a
-public launch, and only the first two are blocking:
+**The site is live and indexable** — step 3 is done. What's left:
 
 | # | Step | Who | Blocking? |
 |---|---|---|---|
 | 1 | Point `uplifepainting.com` DNS at Vercel | whoever holds the Cloudflare login | **yes** |
 | 2 | Choose where estimate leads go, set one env var | UpLife (needs their email) | **yes** |
-| 3 | Flip the site to live and deploy | one command, below | yes (30 sec) |
+| ~~3~~ | ~~Flip to live~~ — **done**, canonicals + robots now on `www.uplifepainting.com` | — | done |
 | 4 | Google Business Profile, Search Console | UpLife | no — do after |
 
-Preview right now: <https://uplifepainting.elijahdesent.com>
+Viewable now at <https://uplifepainting.elijahdesent.com> (serves fine; sends
+`X-Robots-Tag: noindex` so it can't be indexed in place of the real domain).
+Nothing will be indexed until step 1 lands, because that is where every canonical points.
 
 ---
 
@@ -120,8 +121,12 @@ That single command:
 `./go-live.sh --preview` puts it all back. The round trip is byte-for-byte lossless — it was
 tested both ways.
 
-`uplifepainting.elijahdesent.com` keeps working after the flip as a spare preview URL. If you
-would rather it not exist once the real domain is up, remove it from the project in Vercel.
+`uplifepainting.elijahdesent.com` keeps working after the flip as a spare preview URL, but
+`vercel.json` sends **`X-Robots-Tag: noindex, nofollow` on that host only** (a `has`-scoped
+header rule). So the preview stays viewable and shareable while never competing with the real
+domain in search — which matters most right now, because until DNS resolves the preview is the
+only reachable copy and its canonical points somewhere Google can't fetch. Leave that rule in
+place permanently; the real domain is unaffected by it.
 
 ---
 
