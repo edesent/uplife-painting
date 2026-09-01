@@ -1,4 +1,4 @@
-# Demo/preview build — not the public site yet.
-# Run ./go-live.sh --live to flip this and the per-page noindex together.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://www.uplifepainting.com/sitemap.xml
