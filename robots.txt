@@ -1,0 +1,4 @@
+# Demo/preview build — not the public site yet.
+# Flip this file and the per-page <meta name="robots"> together when it goes live.
+User-agent: *
+Disallow: /
