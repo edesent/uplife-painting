@@ -94,15 +94,55 @@
   }
 
   /* ---- estimate form ----
-     There is no backend on this site yet. The form validates, then shows the
-     confirmation panel so the flow can be demonstrated end to end. Wire a real
-     handler (see README) before telling anyone the form delivers mail. */
-  document.querySelectorAll('form[data-demo]').forEach(function (form) {
+     Posts to /api/estimate. The confirmation panel is only shown when the API
+     confirms a lead was actually delivered somewhere — see api/estimate.js. */
+  document.querySelectorAll('form[data-estimate]').forEach(function (form) {
+    var wrap = form.closest('[data-formwrap]');
+    var errBox = wrap.querySelector('[data-error]');
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn ? btn.textContent : '';
+    var shown = Date.now();
+
+    function fail(msg) {
+      if (!errBox) return;
+      errBox.querySelector('[data-error-msg]').textContent = msg;
+      errBox.hidden = false;
+      errBox.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      form.closest('[data-formwrap]').classList.add('is-sent');
-      form.reset();
+      if (errBox) errBox.hidden = true;
+
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      data.elapsed = Date.now() - shown;
+
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+
+      fetch('/api/estimate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          return { ok: r.ok, status: r.status, body: j };
+        });
+      }).then(function (r) {
+        if (r.ok && r.body.ok) { wrap.classList.add('is-sent'); return; }
+        fail(
+          r.body.code === 'not_configured' || r.status === 503
+            ? 'This form is not taking messages just yet. Please call or text 586-356-3663 and we will get straight back to you.'
+            : r.body.code === 'bad_phone'
+              ? 'That phone number does not look right \u2014 please check it and try again.'
+              : 'Sorry, that did not go through. Please call or text 586-356-3663 and we will get straight back to you.'
+        );
+      }).catch(function () {
+        fail('Sorry, that did not go through \u2014 you may be offline. Please call or text 586-356-3663.');
+      }).then(function () {
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      });
     });
   });
 

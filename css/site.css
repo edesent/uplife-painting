@@ -395,12 +395,22 @@ ul{margin:0;padding:0;list-style:none}
 .form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media (max-width:600px){.form__row{grid-template-columns:1fr}}
 .form__note{font-size:.85rem;color:var(--muted)}
+/* honeypot — off-screen, never focusable, invisible to assistive tech */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form__err{
+  background:#FDECEC;border:1.5px solid #D8474A;border-radius:12px;
+  padding:20px 22px;margin-bottom:22px;
+}
+.form__err strong{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;color:#8E1F22}
+.form__err p{color:#6B2426}
+.form__err[hidden]{display:none}
 .form__ok{
   display:none;background:var(--gold-soft);border:1.5px solid var(--gold);
   border-radius:12px;padding:22px 24px;
 }
 .form__ok strong{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase}
 .is-sent .form{display:none}
+.is-sent .form__err{display:none}
 .is-sent .form__ok{display:block}
 
 /* contact rail */

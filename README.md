@@ -15,12 +15,16 @@ Plain static HTML/CSS/JS — **no build step, no framework**. Edit the `.html` f
 directly; whatever is committed is what ships.
 
 ```
-index.html services.html gallery.html about.html contact.html
-css/site.css   — the whole design system, one file
-js/site.js     — mobile nav, scroll reveal, gallery lightbox, form stub
-images/        — photos, logo crops, favicons, OG card
-vercel.json    — cleanUrls: true, so link to /about not /about.html
-robots.txt     — Disallow: / (preview build)
+index.html services.html gallery.html about.html contact.html 404.html
+api/estimate.js — the free-estimate form handler (zero deps, Vercel function)
+css/site.css    — the whole design system, one file
+js/site.js      — mobile nav, scroll reveal, gallery lightbox, form submit
+images/         — photos, logo crops, favicons, OG card
+vercel.json     — cleanUrls + security and cache headers
+sitemap.xml     — five pages; URLs flip with go-live.sh
+robots.txt      — Disallow: / while in preview
+go-live.sh      — one-command switch between preview and live
+GO-LIVE.md      — the launch runbook: DNS, lead destination, checklist
 ```
 
 **The header, nav and footer are duplicated in all five HTML files.** There is no include
@@ -29,20 +33,25 @@ mechanism. If you change the nav, change it in all five.
 **Link without the `.html`.** `cleanUrls` 308-redirects `/about.html` → `/about`, so an
 internal link ending in `.html` costs a redirect hop and disagrees with the canonical.
 
-## This is a preview build — two things to flip before it goes public
+## This is a preview build — see GO-LIVE.md
 
-1. **`robots.txt`** is `Disallow: /` and every page carries
-   `<meta name="robots" content="noindex,nofollow">`. Flip both **together**, and add a
-   `sitemap.xml`, when it goes live. A preview that gets indexed competes with itself.
-2. **The estimate form has no backend.** `js/site.js` intercepts `form[data-demo]`,
-   validates, and shows the confirmation panel. **Nothing is delivered anywhere.** Before
-   telling anyone the form works, either wire a real handler and drop the `data-demo`
-   attribute, or delete the form and leave the call/text CTA. The phone number and the
-   `tel:` links are real and work today.
+`robots.txt` is `Disallow: /` and every page carries
+`<meta name="robots" content="noindex,nofollow">`. **Don't flip these by hand** — run
+`./go-live.sh --live`, which changes them together with the canonical/OG/JSON-LD URLs and
+the sitemap. Doing one without the others is how a preview ends up competing with the real
+site in search.
 
-When the domain is pointed here, search and replace
-`https://uplifepainting.elijahdesent.com` → `https://www.uplifepainting.com` across all
-five files (it appears in `canonical`, the `og:`/`twitter:` tags and the JSON-LD).
+```
+./go-live.sh --check     # what would change + live DNS status
+./go-live.sh --live      # switch to www.uplifepainting.com, allow indexing
+./go-live.sh --preview   # switch back (lossless round trip)
+```
+
+**The estimate form works, but has no destination configured yet.** `POST /api/estimate`
+delivers to Slack and/or email depending on which env vars are set, and returns
+`503 not_configured` when neither is — in which case the page tells the visitor to call
+instead. It will never show the confirmation panel unless a lead actually went somewhere.
+Set `SLACK_WEBHOOK_URL`, or `RESEND_API_KEY` + `ESTIMATE_TO_EMAIL`. See **GO-LIVE.md**.
 
 ## Design language
 

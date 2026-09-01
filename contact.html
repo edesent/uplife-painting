@@ -71,7 +71,12 @@
           <p class="eyebrow">Tell us about the project</p>
           <h2 class="display h2" style="margin:.4em 0 1em">Send us the details</h2>
 
-          <form class="form" data-demo novalidate>
+          <form class="form" data-estimate novalidate>
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company (leave this empty)</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form__row">
               <div class="field">
                 <label for="name">Your name</label>
@@ -121,6 +126,14 @@
               We use your details to get back to you about your estimate, and nothing else.
             </p>
           </form>
+
+          <div class="form__err" data-error hidden role="alert">
+            <strong>That didn't send.</strong>
+            <p data-error-msg style="margin-top:.5em"></p>
+            <p style="margin-top:.8em">
+              <a class="btn btn--navy" href="tel:+15863563663">Call or Text 586-356-3663</a>
+            </p>
+          </div>
 
           <div class="form__ok">
             <strong>Thanks &mdash; that's through.</strong>
