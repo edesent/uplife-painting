@@ -21,6 +21,7 @@ import sys, os, re, glob
 mode, preview, live = sys.argv[1], sys.argv[2], sys.argv[3]
 PAGES = ['index.html', 'services.html', 'gallery.html', 'about.html', 'contact.html']
 NOINDEX = '<meta name="robots" content="noindex,nofollow">\n'
+INDEXOK = '<meta name="robots" content="index,follow">\n'
 
 if mode not in ('--check', '--live', '--preview'):
     sys.exit('usage: go-live.sh [--check|--live|--preview]')
@@ -36,11 +37,12 @@ for f in PAGES:
     s = open(f).read()
     orig = s
     s = s.replace(frm, to)
-    if want_live:
-        s = s.replace(NOINDEX, '')
-    elif NOINDEX not in s:
-        # restore it directly above the canonical link
-        s = re.sub(r'(?m)^(<link rel="canonical")', NOINDEX + r'\1', s, count=1)
+    # the robots meta is always present and always explicit — it just flips
+    have, want = (NOINDEX, INDEXOK) if want_live else (INDEXOK, NOINDEX)
+    if have in s:
+        s = s.replace(have, want)
+    elif want not in s:
+        s = re.sub(r'(?m)^(<link rel="canonical")', want + r'\1', s, count=1)
     if s != orig:
         changes.append(f)
         if write:
