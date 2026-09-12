@@ -27,6 +27,14 @@ go-live.sh      — one-command switch between preview and live
 GO-LIVE.md      — the launch runbook: DNS, lead destination, checklist
 ```
 
+**Photos go in `images/`. Never create a `public/` folder.** This is not a Next.js repo.
+Vercel's zero-config detection treats a `public/` directory as the output directory, so the
+moment one appears the whole site stops being published and every page 404s — that happened on
+2026-09-12, when a photo upload defaulted to `public/images/`. `vercel.json` now pins
+`"outputDirectory": "."` and `.gitignore` blocks `/public/`, but the rule still stands: new
+photos belong in `images/`, sized to about 1600px on the long edge and a few hundred KB, not
+straight off a phone at 5000px and 3MB.
+
 **The header, nav and footer are duplicated in all five HTML files.** There is no include
 mechanism. If you change the nav, change it in all five.
 

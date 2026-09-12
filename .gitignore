@@ -1,3 +1,7 @@
 .DS_Store
 .vercel
 node_modules
+
+# Not a Next.js site. A public/ folder here hijacks the Vercel output
+# directory and 404s every page. Photos go in images/.
+/public/
