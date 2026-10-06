@@ -31,4 +31,19 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.uplifepainting.com/macomb-township</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uplifepainting.com/shelby-township</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uplifepainting.com/clinton-township</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uplifepainting.com/chesterfield</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uplifepainting.com/sterling-heights</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
 </urlset>
