@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# OpenAI / ChatGPT crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://www.uplifepainting.com/sitemap.xml
