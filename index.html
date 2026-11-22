@@ -75,6 +75,18 @@
   ]
 }
 </script>
+<style>
+.hero--home .hero__grid{padding-block:clamp(38px,5vw,78px)}
+.hero--home .h1{font-size:clamp(2rem,4.3vw,4.25rem);line-height:1.08;margin-top:0}
+.hero--home .hero__frame{clip-path:none;border-radius:12px}
+.hero--home .hero__frame::after{display:none}
+.hero--home .hero__frame img{aspect-ratio:4/3;object-position:center}
+@media(max-width:900px){
+  .hero--home .hero__grid{gap:24px}
+  .hero--home .hero__copy{margin-top:0}
+  .hero--home .hero__media{order:0;margin-inline:0}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -105,13 +117,12 @@
 <main id="main">
 
   <!-- ============================ HERO ============================ -->
-  <section class="hero">
+  <section class="hero hero--home">
     <div class="hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow">Serving Macomb County &amp; surrounding areas</p>
-        <h1 class="display h1">House Painters in<br>Macomb County, MI<br><span class="gold">Interior &amp; Exterior</span></h1>
+        <h1 class="display h1">Interior &amp; Exterior Painting in <span class="gold">Macomb County, MI</span></h1>
         <p class="hero__lead">
-          UpLife Painting provides professional interior and exterior house painting in Macomb County, Michigan. We paint siding, trim, walls and ceilings, handle drywall repairs and offer power washing. Serving Macomb Township, Chesterfield, New Baltimore and nearby communities. Schedule a free estimate for your home.
+          UpLife Painting handles walls, ceilings, siding and trim, with drywall repair and surface preparation where needed. Based in Macomb Township and serving nearby communities.
         </p>
         <div class="btn-row hero__cta">
           <a class="btn btn--gold btn--lg" href="https://calendar.app.google/gX2CYmEhi4qXwuK1A" target="_blank" rel="noopener">Schedule a Free Estimate</a>
@@ -120,75 +131,90 @@
       </div>
       <div class="hero__media">
         <div class="hero__frame">
-          <img src="/images/exterior-siding-repair.jpg" width="720" height="960"
-               alt="An UpLife Painting crew member on an extension ladder replacing a damaged siding board high on a gable before painting begins">
+          <img src="/images/exterior-after-front.jpg" width="960" height="720" fetchpriority="high" alt="A finished UpLife Painting exterior with black siding and original red brick">
         </div>
-        <p class="hero__tag">Repairs first. Then paint.</p>
       </div>
-    </div>
-    <div class="hero__trust">
-      <ul>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
-          Quality work you can trust
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 11V7a5 5 0 0110 0v4"/><rect x="4" y="11" width="16" height="10" rx="2"/></svg>
-          Clean, professional &amp; reliable
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 10.5L12 4l8 6.5"/><path d="M6 10v10h12V10"/></svg>
-          Free estimates, no pressure
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a7 7 0 1114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
-          Based in Macomb Township
-        </li>
-      </ul>
     </div>
   </section>
 
-  <section class="section section--paper"><div class="wrap"><div class="stack" style="max-width:920px;margin-inline:auto"><p class="eyebrow">Local house painters</p><h2 class="display h2">Painting services throughout Macomb County</h2><p>Need an exterior house painter or an interior painting estimate near you? UpLife Painting serves homeowners in <a href="/macomb-township">Macomb Township</a>, <a href="/chesterfield">Chesterfield</a>, <a href="/new-baltimore">New Baltimore</a>, <a href="/clinton-township">Clinton Township</a>, <a href="/shelby-township">Shelby Township</a> and <a href="/sterling-heights">Sterling Heights</a>. View <a href="/gallery">real painting projects</a> and <a href="/services">our painting services</a> to see what we do, then schedule a free estimate.</p></div></div></section>
-  <!-- ================== DEDICATED PAINTING SERVICES ================== -->
+  <!-- ========================= SERVICES ========================== -->
   <section class="section section--paper">
     <div class="wrap">
-      <div class="stack" style="max-width:800px;margin-inline:auto;text-align:center">
-        <p class="eyebrow eyebrow--center">Choose your painting project</p>
-        <h2 class="display h2">Interior &amp; exterior house painting</h2>
-        <p class="lead">Explore our painting services, see how we prepare surfaces, and request a free estimate for your Macomb County home.</p>
+      <div class="stack reveal" style="--s:14px;text-align:center;max-width:720px;margin-inline:auto">
+        <h2 class="display h2">Painting &amp; home services</h2>
+        <p class="lead" style="margin-inline:auto">
+          Choose the service that fits your project.
+        </p>
       </div>
-      <div class="grid grid--2" style="margin-top:34px">
+
+      <div class="grid grid--3 reveal" style="margin-top:clamp(34px,4.5vw,56px)">
         <article class="card">
-          <div class="card__media"><a href="/interior-painting"><img src="/images/interior-vaulted-ceiling.jpg" width="1297" height="1297" loading="lazy" alt="Interior room being painted with furnishings carefully protected"></a></div>
-          <div class="card__body"><h3 class="display h3"><a href="/interior-painting">Interior Painting</a></h3><p>Walls, ceilings, doors and trim, including surface preparation and minor repairs.</p><p><a href="/interior-painting">Explore interior painting &rarr;</a></p></div>
+          <div class="card__media">
+            <img loading="lazy" src="/images/exterior-after-garage.jpg" width="960" height="720"
+                 alt="A Macomb County home after an exterior repaint, black siding and gables above red brick">
+          </div>
+          <div class="card__body">
+            <h3 class="display h3"><a href="/exterior-painting">Exterior Painting</a></h3>
+            <p>Siding, gables, soffits, fascia, garage doors and shutters &mdash; washed, prepped and coated to hold up to Michigan weather.</p>
+          </div>
         </article>
+
         <article class="card">
-          <div class="card__media"><a href="/exterior-painting"><img src="/images/exterior-after-front.jpg" width="960" height="720" loading="lazy" alt="Completed black exterior siding painting on a Macomb County home"></a></div>
-          <div class="card__body"><h3 class="display h3"><a href="/exterior-painting">Exterior Painting</a></h3><p>Siding, fascia, soffits and trim with washing, masking and repairs as needed.</p><p><a href="/exterior-painting">Explore exterior painting &rarr;</a></p></div>
+          <div class="card__media">
+            <img loading="lazy" src="/images/interior-vaulted-ceiling.jpg" width="1297" height="1297"
+                 alt="A freshly painted vaulted living-room ceiling with the furniture below covered in drop cloths">
+          </div>
+          <div class="card__body">
+            <h3 class="display h3"><a href="/interior-painting">Interior Painting</a></h3>
+            <p>Walls, ceilings, doors and cabinets. Furniture covered, floors protected, edges cut clean and the room put back before we leave.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <img loading="lazy" src="/images/exterior-trim-carpentry.jpg" width="720" height="960"
+                 alt="New cedar trim boards fitted around a gable, ready for primer and paint">
+          </div>
+          <div class="card__body">
+            <h3 class="display h3"><a href="/services#siding-trim">Siding &amp; Trim</a></h3>
+            <p>Rotted boards and tired trim replaced and repainted, so the finish has something solid underneath it.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <img loading="lazy" src="/images/interior-entry-arch.jpg" width="632" height="631"
+                 alt="A repainted entry room with an arched opening, fresh grey walls and crisp white trim">
+          </div>
+          <div class="card__body">
+            <h3 class="display h3"><a href="/services#drywall-repair">Drywall &amp; Minor Repairs</a></h3>
+            <p>Nail pops, cracks, dents and water marks patched, sanded and blended before the finish coat goes on.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <img loading="lazy" src="/images/exterior-after-side.jpg" width="960" height="720"
+                 alt="Clean red brick beside freshly coated black siding on a finished exterior">
+          </div>
+          <div class="card__body">
+            <h3 class="display h3"><a href="/services#power-washing">Power Washing</a></h3>
+            <p>Siding, brick, walks and drives cleaned &mdash; on its own, or as the first step of an exterior repaint.</p>
+          </div>
+        </article>
+
+        <article class="card card--dark">
+          <div class="card__body" style="justify-content:center;gap:16px;padding-block:34px">
+            <h3 class="display h3">Not sure what<br>you need?</h3>
+            <p>Send a couple of photos or let us walk the house. We will tell you what actually needs doing and what can wait.</p>
+            <div class="btn-row" style="margin-top:8px">
+              <a class="btn btn--gold" href="https://calendar.app.google/gX2CYmEhi4qXwuK1A" target="_blank" rel="noopener">Schedule a Free Estimate</a>
+            </div>
+          </div>
         </article>
       </div>
     </div>
   </section>
-  <!-- ==================== SERVICE CHIP STRIP ===================== -->
-  <div class="chips">
-    <ul>
-      <li><span>
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="4" width="16" height="7" rx="1.5"/><path d="M12 11v4"/><rect x="9.5" y="15" width="5" height="5" rx="1.5"/></svg>
-        Interior</span></li>
-      <li><span>
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M10 20v-5h4v5"/></svg>
-        Exterior</span></li>
-      <li><span>
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="1.5"/><path d="M3.5 12h17M12 4v16"/></svg>
-        Drywall</span></li>
-      <li><span>
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 20L20 4"/><path d="M4 20h5l11-11-5-5L4 15z"/></svg>
-        Trim</span></li>
-      <li><span>
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 15V9h6l6-4v14l-6-4z"/><path d="M3.5 12H6"/></svg>
-        Pressure Washing</span></li>
-    </ul>
-  </div>
 
   <!-- ================== FEATURED TRANSFORMATION ================== -->
   <section class="section section--dark">
@@ -196,7 +222,7 @@
       <div class="project__head reveal">
         <div>
           <p class="eyebrow">Recent project</p>
-          <h2 class="display h2" style="margin-top:.4em">From light siding<br>to a bold black exterior</h2>
+          <h2 class="display h2" style="margin-top:.4em">Exterior painting before and after</h2>
         </div>
         <p>
           A dramatic exterior transformation that keeps the original red brick as the focal point
@@ -248,7 +274,7 @@
       <div class="grid grid--2" style="align-items:start;gap:clamp(32px,5vw,72px)">
         <div class="stack reveal" style="--s:26px">
           <p class="eyebrow">How we work</p>
-          <h2 class="display h2">Paint is the last<br>step, not the first</h2>
+          <h2 class="display h2">What to expect on your painting project</h2>
           <div class="quote">
             <p>
               &ldquo;A fresh coat of paint can completely transform a home, but a quality paint
@@ -259,9 +285,7 @@
             <cite>UpLife Painting</cite>
           </div>
           <p class="lead">
-            That is not a slogan we picked out &mdash; it is the order we actually work in.
-            Most of the time on a job site goes into the part you will never see once the
-            house is finished.
+            The estimate explains which surfaces we’ll paint, what preparation they need and how we’ll protect the surrounding areas.
           </p>
         </div>
 
@@ -289,115 +313,6 @@
             </p>
           </li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================= SERVICES ========================== -->
-  <section class="section section--paper">
-    <div class="wrap">
-      <div class="stack reveal" style="--s:14px;text-align:center;max-width:720px;margin-inline:auto">
-        <p class="eyebrow eyebrow--center">What we do</p>
-        <h2 class="display h2">Painting &amp; prep for<br>Macomb County homes</h2>
-        <p class="lead" style="margin-inline:auto">
-          Inside and out, plus the repair work that has to happen first. If it needs to be
-          prepped, patched and coated, ask us.
-        </p>
-      </div>
-
-      <div class="grid grid--3 reveal" style="margin-top:clamp(34px,4.5vw,56px)">
-        <article class="card">
-          <div class="card__media">
-            <img src="/images/exterior-after-garage.jpg" width="960" height="720"
-                 alt="A Macomb County home after an exterior repaint, black siding and gables above red brick">
-          </div>
-          <div class="card__body">
-            <p class="card__num">01</p>
-            <h3 class="display h3">Exterior Painting</h3>
-            <p>Siding, gables, soffits, fascia, garage doors and shutters &mdash; washed, prepped and coated to hold up to Michigan weather.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__media">
-            <img src="/images/interior-vaulted-ceiling.jpg" width="1297" height="1297"
-                 alt="A freshly painted vaulted living-room ceiling with the furniture below covered in drop cloths">
-          </div>
-          <div class="card__body">
-            <p class="card__num">02</p>
-            <h3 class="display h3">Interior Painting</h3>
-            <p>Walls, ceilings, doors and cabinets. Furniture covered, floors protected, edges cut clean and the room put back before we leave.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__media">
-            <img src="/images/exterior-trim-carpentry.jpg" width="720" height="960"
-                 alt="New cedar trim boards fitted around a gable, ready for primer and paint">
-          </div>
-          <div class="card__body">
-            <p class="card__num">03</p>
-            <h3 class="display h3">Siding &amp; Trim</h3>
-            <p>Rotted boards and tired trim replaced and repainted, so the finish has something solid underneath it.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__media">
-            <img src="/images/interior-entry-arch.jpg" width="632" height="631"
-                 alt="A repainted entry room with an arched opening, fresh grey walls and crisp white trim">
-          </div>
-          <div class="card__body">
-            <p class="card__num">04</p>
-            <h3 class="display h3">Drywall &amp; Minor Repairs</h3>
-            <p>Nail pops, cracks, dents and water marks patched, sanded and blended before the finish coat goes on.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__media">
-            <img src="/images/exterior-after-side.jpg" width="960" height="720"
-                 alt="Clean red brick beside freshly coated black siding on a finished exterior">
-          </div>
-          <div class="card__body">
-            <p class="card__num">05</p>
-            <h3 class="display h3">Power Washing</h3>
-            <p>Siding, brick, walks and drives cleaned &mdash; on its own, or as the first step of an exterior repaint.</p>
-          </div>
-        </article>
-
-        <article class="card card--dark">
-          <div class="card__body" style="justify-content:center;gap:16px;padding-block:34px">
-            <p class="card__num">Free</p>
-            <h3 class="display h3">Not sure what<br>you need?</h3>
-            <p>Send a couple of photos or let us walk the house. We will tell you what actually needs doing and what can wait.</p>
-            <div class="btn-row" style="margin-top:8px">
-              <a class="btn btn--gold" href="https://calendar.app.google/gX2CYmEhi4qXwuK1A" target="_blank" rel="noopener">Schedule a Free Estimate</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================== GALLERY ========================== -->
-  <section class="section section--dark">
-    <div class="wrap">
-      <div class="project__head reveal">
-        <div>
-          <p class="eyebrow">Our work</p>
-          <h2 class="display h2" style="margin-top:.4em">Inside and out</h2>
-        </div>
-        <p>Real jobs, photographed on site. No stock photography anywhere on this site.</p>
-      </div>
-      <div class="shots shots--square reveal">
-        <figure class="shot"><img src="/images/interior-navy-door.jpg" width="631" height="631" alt="A freshly painted deep navy front door framed by grey painted brick and white trim"><figcaption>Front door and painted brick</figcaption></figure>
-        <figure class="shot"><img src="/images/interior-brick-fireplace.jpg" width="631" height="631" alt="A brick fireplace surround painted a soft grey, with the hearth taped off in yellow"><figcaption>Brick fireplace, painted grey</figcaption></figure>
-        <figure class="shot"><img src="/images/ranch-after-entry.jpg" width="960" height="720" alt="A brick ranch home with its gables, soffits and trim finished in deep charcoal, flower beds in front"><figcaption>Charcoal trim on a brick ranch</figcaption></figure>
-        <figure class="shot"><img src="/images/exterior-after-side.jpg" width="960" height="720" alt="Black board-and-batten siding meeting red brick on the side of a finished two-story home"><figcaption>Board-and-batten in black</figcaption></figure>
-      </div>
-      <div class="btn-row reveal" style="margin-top:34px">
-        <a class="btn btn--gold" href="/gallery">View the full gallery</a>
       </div>
     </div>
   </section>
@@ -431,7 +346,7 @@
     <div class="cta__inner">
       <div>
         <p class="eyebrow" style="color:var(--navy-950)">Free estimates</p>
-        <h2 class="display h2" style="margin-top:.4em">Ready for a<br>fresh coat?</h2>
+        <h2 class="display h2" style="margin-top:.4em">Get a free painting estimate</h2>
         <p>
           Tell us about your project and we will come look at it. Estimates are free,
           and there is no obligation attached to one.
