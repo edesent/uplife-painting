@@ -21,8 +21,8 @@
   --paper:#F4F6FA;
   --paper-2:#E9EDF4;
   --ink:#0E1726;
-  --muted:#5A6779;
-  --muted-dark:rgba(255,255,255,.72);
+  --muted:#445267;
+  --muted-dark:rgba(255,255,255,.88);
   --line:rgba(14,23,38,.12);
   --line-dark:rgba(255,255,255,.14);
 
@@ -41,7 +41,7 @@
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;font-family:var(--body);color:var(--ink);background:var(--white);
-  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
@@ -82,7 +82,7 @@ ul{margin:0;padding:0;list-style:none}
 .h1{font-size:clamp(2.5rem,6.4vw,4.6rem)}
 .h2{font-size:clamp(1.95rem,4.2vw,3.1rem)}
 .h3{font-size:clamp(1.3rem,2.2vw,1.75rem)}
-.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--muted);max-width:62ch}
+.lead{font-size:clamp(1.125rem,1.7vw,1.25rem);color:var(--muted);max-width:58ch}
 .section--dark .lead,.section--navy .lead{color:var(--muted-dark)}
 .gold{color:var(--gold)}
 
@@ -172,7 +172,8 @@ ul{margin:0;padding:0;list-style:none}
 }
 .hero__copy{max-width:640px}
 .hero .h1{margin-block:.4em .5em}
-.hero__lead{font-size:clamp(1.05rem,1.5vw,1.2rem);color:rgba(255,255,255,.78);max-width:52ch}
+.hero__lead{font-size:clamp(1.125rem,1.7vw,1.25rem);line-height:1.65;color:var(--muted-dark);max-width:52ch}
+.hero__lead strong{color:var(--white);font-weight:700}
 .hero__cta{margin-top:2rem}
 
 /* the photo sits in a diagonally-cut panel, like the flyer's slanted photo strips */
@@ -254,7 +255,7 @@ ul{margin:0;padding:0;list-style:none}
 .card__media{aspect-ratio:3/2;overflow:hidden;background:var(--paper-2)}
 .card__media img{width:100%;height:100%;object-fit:cover}
 .card__body{padding:24px 24px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
-.card__body p{color:var(--muted);font-size:.98rem}
+.card__body p{color:var(--muted);font-size:1.0625rem}
 .card__num{
   font-family:var(--display);font-weight:900;font-style:italic;font-size:.85rem;
   color:var(--gold);letter-spacing:.06em;
@@ -492,7 +493,7 @@ ul{margin:0;padding:0;list-style:none}
   padding:clamp(46px,6vw,84px) var(--gut) clamp(52px,6.5vw,88px);
 }
 .phead .h1{font-size:clamp(2.2rem,5.2vw,3.9rem);margin-block:.35em .45em}
-.phead p{color:rgba(255,255,255,.78);max-width:60ch}
+.phead p{color:var(--muted-dark);max-width:60ch}
 .crumb{font-size:.85rem;color:rgba(255,255,255,.5)}
 .crumb a{text-decoration:none}
 .crumb a:hover{color:var(--gold)}
