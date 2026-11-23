@@ -5,13 +5,25 @@
 
   /* ---- mobile nav ---- */
   var burger = document.querySelector('.burger');
-  if (burger) {
-    var nav = document.querySelector('.nav');
+  var nav = document.querySelector('.nav');
+  if (burger && nav) {
     var cta = document.querySelector('.header__cta');
-    burger.addEventListener('click', function () {
-      var open = nav.classList.toggle('nav--open');
+
+    function setMenuOpen(open) {
+      nav.classList.toggle('nav--open', open);
       if (cta) cta.classList.toggle('header__cta--open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    burger.addEventListener('click', function () {
+      setMenuOpen(!nav.classList.contains('nav--open'));
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!nav.classList.contains('nav--open')) return;
+      if (burger.contains(event.target)) return;
+      if (nav.contains(event.target) || (cta && cta.contains(event.target))) return;
+      setMenuOpen(false);
     });
   }
 
