@@ -498,6 +498,8 @@ ul{margin:0;padding:0;list-style:none}
 main:has(> section[aria-label$=" project photos"]) .phead .h1{
   color:#f5d58b;
   font-weight:900;
+  -webkit-text-stroke:clamp(.6px,.12vw,1.25px) #79501d;
+  paint-order:stroke fill;
   text-shadow:0 3px 6px rgba(0,0,0,.55);
 }
 @supports (background-clip:text){
