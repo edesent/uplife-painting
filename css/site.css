@@ -493,6 +493,34 @@ ul{margin:0;padding:0;list-style:none}
   padding:clamp(46px,6vw,84px) var(--gut) clamp(52px,6.5vw,88px);
 }
 .phead .h1{font-size:clamp(2.2rem,5.2vw,3.9rem);margin-block:.35em .45em}
+
+/* Dedicated service pages have a project photo section below the title. */
+main:has(> section[aria-label$=" project photos"]) .phead .h1{
+  color:#f5d58b;
+  font-weight:900;
+  text-shadow:0 3px 6px rgba(0,0,0,.55);
+}
+@supports (background-clip:text){
+  main:has(> section[aria-label$=" project photos"]) .phead .h1{
+    background-image:linear-gradient(180deg,#fff1c5 0%,#efcc76 46%,#d8a94e 51%,#f7dc98 100%);
+    background-clip:text;
+    color:transparent;
+    text-shadow:none;
+    filter:drop-shadow(0 3px 3px rgba(0,0,0,.55));
+  }
+}
+main:has(> section[aria-label$=" project photos"]) .section--paper .h2{
+  color:var(--navy-950);
+  font-weight:900;
+  text-shadow:0 2px 0 rgba(216,169,78,.28);
+}
+@media (forced-colors:active){
+  main:has(> section[aria-label$=" project photos"]) .phead .h1{
+    background:none;
+    color:CanvasText;
+    filter:none;
+  }
+}
 .phead p{color:var(--muted-dark);max-width:60ch}
 .crumb{font-size:.85rem;color:rgba(255,255,255,.5)}
 .crumb a{text-decoration:none}
