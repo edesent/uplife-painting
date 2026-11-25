@@ -109,6 +109,36 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
   .home-trust{display:flex;align-items:center;gap:1rem;margin-top:1rem;color:#fff;font-weight:700}
   .home-trust span{border:1px solid #edc56f;border-radius:999px;padding:.35rem .75rem}
   .home-trust a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#edc56f;color:#061a30;font:bold 1.5rem Arial,sans-serif;text-decoration:none}
+
+  .hero--home{
+    background:linear-gradient(180deg,rgba(6,26,48,.22),rgba(6,26,48,.57) 48%,#061a30 100%),
+      url("/images/exterior-after-front.jpg") center 42% / cover no-repeat #061a30;
+  }
+  .hero--home .hero__grid{min-height:clamp(430px,65vh,690px);align-items:end}
+  .hero--home .hero__copy{padding-bottom:clamp(28px,6vw,84px)}
+  .home-projects{padding-top:clamp(20px,4vw,48px)}
+  .home-projects .grid{grid-template-columns:1.12fr .88fr;gap:clamp(12px,3vw,32px)}
+  .home-projects figure:first-child img{aspect-ratio:5/4}
+  .home-projects figure:nth-child(2){margin-top:3rem}
+  .home-projects figure:nth-child(3){margin-top:-1rem}
+  .home-services .card:has(.card__media){position:relative;overflow:hidden;border-radius:8px}
+  .home-services .card__media img{aspect-ratio:4/3}
+  .home-services .card:has(.card__media) .card__body{
+    position:absolute;inset:auto 0 0;padding:2rem .85rem .85rem;pointer-events:none;
+    background:linear-gradient(transparent,rgba(6,26,48,.95))
+  }
+  .home-services .card:has(.card__media) .card__body p{display:none}
+  .home-services .card h3 a{color:#fff;pointer-events:auto}
+  @media(max-width:700px){
+    .hero--home .hero__grid{display:flex;min-height:clamp(440px,72svh,650px);align-items:flex-end}
+    .hero--home .hero__media{display:none}
+    .hero--home .hero__copy{width:100%}
+    .home-projects figure:first-child{grid-column:auto}
+    .home-projects figure:nth-child(2){margin-top:2.4rem}
+    .home-projects figure:nth-child(3){margin-top:-.5rem}
+    .home-services .grid{grid-template-columns:minmax(0,1fr)}
+    .home-services .card__media img{aspect-ratio:16/9}
+  }
 </style>
 <style>
   .home-services{background:#061a30;color:#fff}
@@ -202,6 +232,27 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
           <img src="/interior-trim-spray-painting.jpg" width="1152" height="1536" fetchpriority="high" alt="Painter spray-painting white interior trim and doors with the floor and openings masked off">
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section--paper home-projects">
+    <div class="wrap">
+      <h2 class="display h2">See Our Work</h2>
+      <div class="grid grid--3" style="margin-top:1.4rem">
+        <figure>
+          <img src="/images/exterior-after-front.jpg" width="960" height="720" loading="lazy" alt="Black exterior siding above red brick after repainting">
+          <figcaption>Exterior painting</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/home-garage-drywall.webp" width="960" height="720" loading="lazy" alt="Garage drywall and painting project">
+          <figcaption>Garage drywall and painting</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/home-cabinet-refinishing.webp" width="960" height="720" loading="lazy" alt="Wood cabinets with textured glass doors">
+          <figcaption>Cabinet refinishing</figcaption>
+        </figure>
+      </div>
+      <div class="btn-row"><a class="btn btn--navy" href="/gallery">View Before &amp; After Photos</a></div>
     </div>
   </section>
 
@@ -303,27 +354,6 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
           </div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--paper home-projects">
-    <div class="wrap">
-      <h2 class="display h2">See Our Work</h2>
-      <div class="grid grid--3" style="margin-top:1.4rem">
-        <figure>
-          <img src="/images/exterior-after-front.jpg" width="960" height="720" loading="lazy" alt="Black exterior siding above red brick after repainting">
-          <figcaption>Exterior painting</figcaption>
-        </figure>
-        <figure>
-          <img src="/images/home-garage-drywall.webp" width="960" height="720" loading="lazy" alt="Garage drywall and painting project">
-          <figcaption>Garage drywall and painting</figcaption>
-        </figure>
-        <figure>
-          <img src="/images/home-cabinet-refinishing.webp" width="960" height="720" loading="lazy" alt="Wood cabinets with textured glass doors">
-          <figcaption>Cabinet refinishing</figcaption>
-        </figure>
-      </div>
-      <div class="btn-row"><a class="btn btn--navy" href="/gallery">View Before &amp; After Photos</a></div>
     </div>
   </section>
 
