@@ -107,6 +107,29 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
     .hero--home .hero__cta .btn{width:100%;justify-content:center}
     .home-services .card__media img{aspect-ratio:16/9}
   }
+
+  body{background:#061a30}
+  .hero--home,.home-projects{background:#061a30;color:#fff}
+  .hero--home .display,.home-services .display,.home-projects .display{
+    font-family:Inter,Arial,sans-serif;font-weight:900;font-style:normal;
+    letter-spacing:-.045em;line-height:1.05
+  }
+  .home-services .card{background:transparent;border:0;box-shadow:none}
+  .home-services .card__body{padding-inline:0}
+  .home-services .card__media{border-radius:10px;overflow:hidden}
+  .home-projects .grid{grid-template-columns:1.2fr .8fr 1fr;align-items:start;gap:clamp(12px,3vw,36px)}
+  .home-projects figure:nth-child(2){margin-top:3.25rem}
+  .home-projects figure:nth-child(3){margin-top:1.25rem}
+  .home-projects figure:first-child img{aspect-ratio:1/1}
+  .home-projects figure:nth-child(2) img{aspect-ratio:4/5}
+  .home-projects .btn{background:#edc56f;color:#061a30;border-color:#edc56f}
+  @media(max-width:700px){
+    .home-projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .home-projects figure:first-child{grid-column:1/-1}
+    .home-projects figure:first-child img{aspect-ratio:16/10}
+    .home-projects figure:nth-child(2){margin-top:0}
+    .home-projects figure:nth-child(3){margin-top:1.4rem}
+  }
 </style>
 </head>
 <body>
