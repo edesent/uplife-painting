@@ -107,7 +107,9 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
   @media(max-width:800px){.home-text-tab{bottom:calc(5rem + env(safe-area-inset-bottom))}}
   @media(prefers-reduced-motion:reduce){.home-text-tab{transition:none}}
   .home-trust{display:flex;align-items:center;gap:1rem;margin-top:1rem;color:#fff;font-weight:700}
-  .home-trust span{border:1px solid #edc56f;border-radius:999px;padding:.35rem .75rem}
+  .home-trust .insured-mark{display:inline-flex;align-items:center;gap:.45rem;font-size:.875rem}
+  .insured-mark svg{width:18px;height:18px;color:#edc56f}
+  .home-trust a svg{width:20px;height:20px;fill:currentColor}
   .home-trust a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#edc56f;color:#061a30;font:bold 1.5rem Arial,sans-serif;text-decoration:none}
 
   .hero--home{
@@ -130,9 +132,6 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
     .hero--home .hero__copy{width:100%}
     .home-services .grid{grid-template-columns:minmax(0,1fr)}
     .home-services .card__media img{aspect-ratio:16/9}
-  }
-  .home-services .card:has(.card__media a[href="/specialty-refinishing"]) .card__body{
-    position:static;padding:.65rem 0 0;background:none;pointer-events:auto;
   }
   .home-approach{background:#061a30;color:#fff}
   .home-approach .eyebrow,.home-approach .quote cite{color:#f3d387}
@@ -211,8 +210,8 @@ main .card__body p strong,main .lead strong,main .cta p strong{font-weight:700}
           <a class="btn btn--ghost btn--lg" href="sms:+15863563663">Text Us Project Photos</a>
         </div>
         <div class="home-trust">
-          <span>Insured</span>
-          <a href="https://www.facebook.com/people/Uplifepainting/61594038056853/" aria-label="UpLife Painting on Facebook"><span aria-hidden="true" style="border:0;padding:0">f</span></a>
+          <span class="insured-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 3 6v5c0 5.5 3.8 9.4 9 11 5.2-1.6 9-5.5 9-11V6z"/><path d="m8 12 2.5 2.5L16 9" fill="none" stroke="#061a30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Insured</span>
+          <a href="https://www.facebook.com/people/Uplifepainting/61594038056853/" aria-label="UpLife Painting on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 22v-9h3l.5-3.5H14V7.3c0-1 .3-1.8 1.8-1.8H18V2.4c-.4-.1-1.6-.2-2.7-.2-2.8 0-4.8 1.7-4.8 4.9v2.4H7.4V13h3.1v9z"/></svg></a>
         </div>
       </div>
       <div class="hero__media">
